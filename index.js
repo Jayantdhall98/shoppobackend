@@ -66,7 +66,7 @@ const sessionStorage= MongoStore.create({
 
 
 app.use(cors({
-    origin: ['https://shoppobackend.onrender.com'], // Replace with your frontend domain
+    origin: ['https://shoppoholicc.netlify.app'], // Replace with your frontend domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true // Enable CORS credentials (cookies, authorization headers)

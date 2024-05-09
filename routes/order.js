@@ -86,7 +86,7 @@
 
 
 
-//  res.redirect(`http://localhost:5173/paymentsuccess?reference=${razorpay_payment_id}`);
+//  res.redirect(`https://shoppoholicc.netlify.app/paymentsuccess?reference=${razorpay_payment_id}`);
   
   
 // }else{
@@ -244,7 +244,7 @@ router.post("/paymentverification", async (req, res) => {
       });
 
       // Redirect to payment success page with reference ID
-      return res.redirect(`http://localhost:5173/paymentsuccess?reference=${razorpay_payment_id}`);
+      return res.redirect(`https://shoppoholicc.netlify.app/paymentsuccess?reference=${razorpay_payment_id}`);
     } else {
       // If signature is not authentic, send error response
       return res.status(400).json({ success: false, error: "Invalid signature." });
