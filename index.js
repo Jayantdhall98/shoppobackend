@@ -127,7 +127,8 @@ app.get("/key",(req,res)=>{
 //   })
 
 app.listen(process.env.PORT||5002,()=>{
-    console.log("Backend server is running")
+    console.log("Backend server is running");
+    res.send("shoppoholic");
      
 })
 
