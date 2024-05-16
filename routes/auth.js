@@ -9,7 +9,7 @@ const User = require("../models/User");
 router.post("/register",async (req,res)=>{
     try{
 
-       const newuser=await new User({
+       const newuser= new User({
             username:req.body.username,
             email:req.body.email,
             password:req.body.password,
