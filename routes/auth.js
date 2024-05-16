@@ -9,7 +9,7 @@ const User = require("../models/User");
 router.post("/register",async (req,res)=>{
     try{
 
-        const newuser= new User({
+       const newuser=await new User({
             username:req.body.username,
             email:req.body.email,
             password:req.body.password,
@@ -23,10 +23,10 @@ router.post("/register",async (req,res)=>{
 })
 
 //for session authenticate
-router.get("/",(req,res)=>{
+router.get("/", async (req,res)=>{
     
    
-    if(req.session.userid){
+     if(req.session.userid){
       console.log("session found" +  req.session.userid)
         return res.json({value:true, usertype:req.session.usertype})
     }else{
@@ -38,8 +38,8 @@ router.get("/",(req,res)=>{
 //Destroy session
 
 router.get("/destroy",async(req,res)=>{
-    req.session.destroy();
-res.send("destroyed")
+   await  req.session.destroy();
+    res.send("destroyed")
 
 })
 
@@ -56,7 +56,7 @@ let errorr={
 }
 
 
-User.findOne({email:email}).then((user)=>{console.log(user)
+  await User.findOne({email:email}).then((user)=>{console.log(user)
     if(password&&user.password==password){
         console.log("welcome to the shopping app!!")
         req.session.userid=user._id;

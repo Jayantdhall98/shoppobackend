@@ -7,7 +7,7 @@ const Product = require("../models/Product");
 
 //Add to cart 
 router.post("/addcart",async (req,res)=>{
-    const newCart= new Cart({
+    const newCart= await new Cart({
         userid:req.session.userid,
         productId:req.body.productId,
         quantity:req.body.quantity

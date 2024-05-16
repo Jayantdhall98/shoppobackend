@@ -11,7 +11,7 @@ router.post("/uploadproduct",async (req,res)=>{
 try{
        if(req.session.usertype=="admin"||"subadmin" && req.session.userid){
 
-           const newProduct= new Product(req.body)
+           const newProduct= await new Product(req.body)
            const savedProduct = await newProduct.save();
           
            res.send(savedProduct)
